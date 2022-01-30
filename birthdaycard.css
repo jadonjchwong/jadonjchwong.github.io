@@ -1,5 +1,7 @@
 #card{
-  font-family: 'charmonman', cursive;
+  font-family: 'charmonman', cursive; 
+  position: relative; 
+  perspective: 3000px;
 }
 body{
   /* removes any whitespace around he edge*/
@@ -18,11 +20,15 @@ body{
   justify-content:center;
   /* ADDS A GRADIENT BACKGROUND */
   background: linear-gradient(to top, #79bcf7, #FBD786, #C6FFDD);
+  background-image: url("https://steemitimages.com/DQmR9yECpGjNgn8nD2kvRFnxTVAkYWVkhwk8GPwT7D9JVXi/sss.JPG");
+  background-size:cover;
+  background-position: center center;
 }
 section{
   width:560px;
   height:400px;
   border-radius:10px;
+  box-shadow: 0 19px 38px rgba(0,0,0,30), 0 15px 12px rgba(0,0,0,0.22)
 }
 #cover{
   background-color:#0f2342;
@@ -31,8 +37,14 @@ section{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  align-items:center;
+  align-items:center; 
+  
+  position:absolute;
+  top:0;
+  left: 0;
+  z-index:1;
 }
+
 #message{
   background-color: rgba(255,255,255,0.5)
   color: #e43397;
@@ -41,6 +53,9 @@ section{
   flex-direction:column;
   justify-content:center;
   align-items:center;    
+  
+  background-color: rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
 }
 #cover img {
   height:50%;
@@ -53,3 +68,25 @@ section{
   font-size: 18px;
   margin:0px;
 }
+#message h1{
+  margin: 0;
+  }
+#message img{
+  height: 60%;
+}
+#cover.animate{
+  transform: rotateX(180deg);
+  transform-origin: 0% 0%;
+  transition: transform 2s;
+}
+#cover.animate>* {
+  opacity:0;
+  transition: opacity 1s;
+}
+#cover.not(.animate): hover{
+  transform:rotateX(15deg);
+  transform-origin: 0% 0%;
+  transition: transform 0.5s;
+  cursor:grab;
+}
+
