@@ -1,24 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Chunky Chocoalate Chip Cookie Dough Co.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number (Multi-Player)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #gameContainer {
+            margin-top: 50px;
+        }
+        #result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: darkblue;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+    </style>
 </head>
 <body>
-  <nav> 
-    <a href="#">Home</a>
-    <a href="http://dramacool.so" target="_blank">About</a>
-  </nav>
-  <h1>Chunky Chocoalate Chip  Cookie <br> Dough Co.</h1>
-  <p>"The best chunky chocolate chip cookie dough in the world!"</p>
-  <a href="https://dramacool.rs/"target="_blank">
-  <img src="https://www.pngfind.com/pngs/m/318-3188023_descendants-of-the-sun-png-transparent-png.png" alt="Song Joong Ki" height="250px" width="auto">
-  </a>
-    <h3>All natural ingredients</h3>
-  <h3>Instructions</h3>
-  <h3>Nutrition Information</h3>
-  <h3>Win free cookie dough for life</h3>
-  <footer>
-    <p>© 2017, Chunky Chocolate Chip Cookie Co. All rights reservered.</p>
-  </footer>
+    <h1>Guess the Number (Multi-Player)</h1>
+    <p>I'm thinking of a number between <span id="minRange">1</span> and <span id="maxRange">100</span>.</p>
+    <p>It's <span id="currentPlayer">Player 1</span>'s turn!</p>
+    <div id="gameContainer">
+        <input type="number" id="userGuess" placeholder="Your guess" />
+        <button id="submitGuess">Submit</button>
+        <p id="result"></p>
+        <button id="restartGame" style="display: none;">Play Again</button>
+    </div>
 </body>
+<script src="game.js"></script>
 </html>
